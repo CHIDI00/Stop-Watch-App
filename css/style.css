@@ -36,3 +36,28 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+.buttons {
+    display: flex;
+    margin: 30px;
+}
+
+.buttons button {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 30px;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.buttons #startBtn {
+    background-color: blue;
+    color: white;
+}
+
+.buttons #stopBtn {
+    background-color: rgb(239, 18, 18);
+    color: white;
+}
