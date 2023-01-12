@@ -7,7 +7,7 @@ const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn');
 
 startBtn.addEventListener('click', () => {
-    startBtnClick()
+    timer
 })
 
 function startBtnClick() {
@@ -15,4 +15,26 @@ function startBtnClick() {
     let m = new Date().getMinutes()
     let s = new Date().getSeconds()
     let ms = new Date().getMilliseconds()
+
+    h = h < 10 ? '0' + h : h
+    m = m < 10 ? '0' + m : m
+    s = s < 10 ? '0' + s : s
+    ms = ms < 10 ? '0' + ms : ms
+
+    hourEl.innerHTML = `${h}:`
+    minutesEl.innerHTML = `${m}:`
+    secondsEl.innerHTML = `${s}:`
+    milisecondEl.innerHTML = `${ms}:`
+
+    timer()
 }
+
+function timer() {
+    t = setTimeout(startBtnClick, 1000)
+}
+
+
+
+// setTimeout(() => {
+//     startBtnClick()
+// }, 1000)
