@@ -1,4 +1,4 @@
-const hourEl = document.getElementById('hour')
+const hourEl = document.getElementById('watch-container hour')
 const minutesEl = document.getElementById('minutes')
 const secondsEl = document.getElementById('seconds')
 // const milisecondEl = document.getElementById('milisecond')
@@ -6,7 +6,9 @@ const secondsEl = document.getElementById('seconds')
 const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn');
 
-let seconds = 3600;
+startBtn.addEventListener('click', start)
+
+let seconds = 3800;
 let interval = null;
 
 function startBtnClick() {
@@ -20,14 +22,17 @@ function startBtnClick() {
     if (mins < 10) mins = '0' + mins;
     if (secs < 10) secs = '0' + secs;
 
-    hourEl.innerText = `${hrs}:`
-    minutesEl.innerText = `${mins}:`
-    secondsEl.innerText = `${secs}:`
+    hourEl.innerText = `${hrs}:${mins}:${secs}`
+    // minutesEl.innerText = ``
+    // secondsEl.innerText = `:`
     // milisecondEl.innerHTML = `${ms}:`
 }
 
 function start() {
-    interval
+    if (interval) {
+        return
+    }
+    interval = setInterval(timer, 1000)
 }
 
 
