@@ -1,36 +1,33 @@
 const hourEl = document.getElementById('hour')
-const minutesEl = document.getElementById('minute')
-const secondsEl = document.getElementById('second')
-const milisecondEl = document.getElementById('milisecond')
+const minutesEl = document.getElementById('minutes')
+const secondsEl = document.getElementById('seconds')
+// const milisecondEl = document.getElementById('milisecond')
 
 const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn');
 
-startBtn.addEventListener('click', () => {
-    timer
-})
+let seconds = 3600;
+let interval = null;
 
 function startBtnClick() {
-    let h = new Date().getHours()
-    let m = new Date().getMinutes()
-    let s = new Date().getSeconds()
-    let ms = new Date().getMilliseconds()
+    seconds ++
 
-    h = h < 10 ? '0' + h : h
-    m = m < 10 ? '0' + m : m
-    s = s < 10 ? '0' + s : s
-    ms = ms < 10 ? '0' + ms : ms
+    let hrs = Math.floor(seconds / 3600)
+    let mins = Math.floor((seconds - (hrs * 3600)) / 60)
+    let secs = seconds % 60
 
-    hourEl.innerHTML = `${h}:`
-    minutesEl.innerHTML = `${m}:`
-    secondsEl.innerHTML = `${s}:`
-    milisecondEl.innerHTML = `${ms}:`
+    if (hrs < 10) hrs = '0' + hrs;
+    if (mins < 10) mins = '0' + mins;
+    if (secs < 10) secs = '0' + secs;
 
-    timer()
+    hourEl.innerText = `${hrs}:`
+    minutesEl.innerText = `${mins}:`
+    secondsEl.innerText = `${secs}:`
+    // milisecondEl.innerHTML = `${ms}:`
 }
 
-function timer() {
-    t = setTimeout(startBtnClick, 1000)
+function start() {
+    interval
 }
 
 
