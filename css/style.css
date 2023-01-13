@@ -27,13 +27,14 @@ body {
     word-spacing: 3px;
 }
 
-.watch {
+.time {
     display: flex;
     border: 5px solid black;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
 }
 
 .buttons {
@@ -44,7 +45,7 @@ body {
 .buttons button {
     display: flex;
     justify-content: space-between;
-    margin: 0 30px;
+    margin: 0 10px;
     font-size: 20px;
     padding: 5px 10px;
     border-radius: 5px;
@@ -52,12 +53,16 @@ body {
     cursor: pointer;
 }
 
-.buttons #startBtn {
+.buttons .start {
     background-color: blue;
     color: white;
 }
 
-.buttons #stopBtn {
+.buttons .stop {
     background-color: rgb(239, 18, 18);
+    color: white;
+}
+.buttons .reset {
+    background-color: rgb(7, 62, 2);
     color: white;
 }
