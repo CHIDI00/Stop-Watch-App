@@ -27,7 +27,7 @@ body {
     word-spacing: 3px;
 }
 
-#watch-container {
+.watch {
     display: flex;
     border: 5px solid black;
     border-radius: 10px;
