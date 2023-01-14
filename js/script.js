@@ -1,18 +1,15 @@
-const time_El = document.querySelector('.time')
-const start_El = document.querySelector('.start')
-const stop_El = document.querySelector('.stop')
-const reset_EL = document.querySelector('.reset')
+const time = document.querySelector('.time')
+const start_Btn = document.querySelector('.start')
+const stop_Btn = document.querySelector('.stop')
+const reset_Btn = document.querySelector('.reset')
 
 let seconds = 0;
-let interval = null;
+let timeInterval = null;
 
-start_El.addEventListener('click', start)
-stop_El.addEventListener('click', stop)
-reset_EL.addEventListener('click', reset)
 
 function timer() {
     seconds++
-
+    
     let hrs = Math.floor(seconds / 3600)
     let mins = Math.floor((seconds - (hrs * 3600)) / 60)
     let secs = seconds % 60 
@@ -21,29 +18,32 @@ function timer() {
     if (mins < 10) mins = '0' + mins
     if (secs < 10) secs = '0' + secs
 
-    time_El.innerText = `${hrs}:${mins}:${secs}`
+    time.innerText = `${hrs}:${mins}:${secs}`
 }
 
 timer()
 
 function start() {
-    if (interval) {
+    if (timeInterval) {
         return
     }
-    interval = setInterval(timer, 1000)
+    timeInterval = setInterval(timer, 1000)
 }
 
 function stop() {
-    clearInterval(interval)
-    interval = null
+    clearInterval(timeInterval)
+    timeInterval = null
 }
 
 function reset() {
     stop()
     seconds = 0
-    time_El.innerText = "00:00:00"
+    time.innerText = "00:00:00"
 }
 
+start_Btn.addEventListener('click', start)
+stop_Btn.addEventListener('click', stop)
+reset_Btn.addEventListener('click', reset)
 
 // setTimeout(() => {
 //     startBtnClick()
